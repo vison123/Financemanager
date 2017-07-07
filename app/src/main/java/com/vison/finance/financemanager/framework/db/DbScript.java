@@ -11,7 +11,7 @@ CREATE TABLE Project(
 );
 
 CREATE TABLE Category(
-   categoty_id      INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+   category_id      INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
    project_id       INTEGER,
    name             VARCHAR(20),
    category_budget  DECIMAL(20,6),
@@ -30,3 +30,20 @@ CREATE TABLE Money(
 
 INSERT INTO Project (project_name,start_date,end_date,budget,in_amount,out_amount,comment,description)
 VALUES ('project1', '2017-07-01 11:21:10.64', '2018-07-01 11:21:10.64', 30000000, 20000, 200000, '','');
+
+INSERT INTO Category (project_id,name,category_budget,description)
+VALUES (1, 'category1', 3000000, '');
+INSERT INTO Category (project_id,name,category_budget,description)
+VALUES (1, 'category2', 4000000, '');
+INSERT INTO Category (project_id,name,category_budget,description)
+VALUES (1, 'category3', 3000000, '');
+
+INSERT INTO Money (money_category_id,project_id,in_out_type,occur_date,amount,description)
+VALUES (1,1,'IN','2017-07-07 11:21:10.64',20000,'');
+INSERT INTO Money (money_category_id,project_id,in_out_type,occur_date,amount,description)
+VALUES (1,1,'IN','2017-07-08 11:21:10.64',30000,'');
+INSERT INTO Money (money_category_id,project_id,in_out_type,occur_date,amount,description)
+VALUES (1,1,'OUT','2017-07-09 11:21:10.64',40000,'');
+
+
+
