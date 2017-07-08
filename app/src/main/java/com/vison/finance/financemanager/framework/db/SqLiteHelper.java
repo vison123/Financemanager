@@ -7,6 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.orhanobut.logger.Logger;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
 /**
  * Created by Administrator on 2017/7/5.
  */
@@ -14,23 +19,12 @@ import android.util.Log;
 public class SqLiteHelper extends SQLiteOpenHelper {
 
 
-    private static final String name = "finance.db"; //数据库名称
+    private static final String DATABASE_NAME  = "finance.db"; //数据库名称
 
-    private static final int version = 1; //数据库版本
-
-    //构造方法
+    private static final int DATABASE_VERSION  = 1; //数据库版本
 
     public SqLiteHelper(Context context) {
-        //需要调用父类的构造方法 写在第一行
-        super(context, name, null, version);
-    }
-
-    public SqLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
-
-    public SqLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler) {
-        super(context, name, factory, version, errorHandler);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     //实现方法  是一个回调方法
@@ -39,24 +33,8 @@ public class SqLiteHelper extends SQLiteOpenHelper {
     //只调用一次
 
     public void onCreate(SQLiteDatabase db) {
-        //1.创建数据库的语句
-        //构造建表语句
-        String creaTTable = "create table user (_id integer PRIMARY KEY AUTOINCREMENT NOT NULL,name varchar,age int)";
-        db.execSQL(creaTTable);
-        Log.e("dbhelper","create table");
-        //2.初始化参数 ContentValues
-        ContentValues cv = new ContentValues();
-
-        cv.put("name", "tom");
-        cv.put("age", "20");
-        //返回id long型  如果不成功返回-1
-        //1-表名
-        //2-空列的默认值
-        //3-字段和值的key/value集合
-        Long l = db.insert("user", null, cv);
-        Log.e("dbhelper","insert data");
-        //2.初始化数据
-
+        createTable(db);
+        initData(db);
     }
 
     //升级数据库
@@ -64,4 +42,26 @@ public class SqLiteHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // 数据库升级要保证数据不会丢失
     }
+
+    private void createTable (SQLiteDatabase db) {
+        db.execSQL(DbProject.CREATE_PROJECT_TABLE);
+        db.execSQL(DbCategory.CREATE_CATEGORY_TABLE);
+        db.execSQL(DbMoney.CREATE_MONEY_TABLE);
+    }
+
+    private void initData (SQLiteDatabase db) {
+        ContentValues cv = new ContentValues();
+        cv.put("project_name", "项目一");
+        cv.put("start_date", "2017-07-01 11:21:10.64");
+        cv.put("end_date", "2018-07-01 11:21:10.64");
+        cv.put("budget", 3000000);
+        cv.put("in_amount", 20000);
+        cv.put("out_amount", 3000);
+        cv.put("description", "项目描述");
+        cv.put("comment", "项目内容");
+        Long l = db.insert("t_project", null, cv);
+    }
+
+
+
 }

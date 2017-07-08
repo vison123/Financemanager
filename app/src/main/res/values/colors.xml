@@ -3,4 +3,121 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="primaryColor">#4b76de</color>
+    <color name="secondColor">#7986cb</color>
+    <color name="thirdColor">#c5cae9</color>
+    <color name="forthColor">#303f9f</color>
+    <color name="hint_color">#bac5cc</color>
+    <color name="divide_line">#d3d5e0</color>
+    <color name="divide_line2">#e2e5e8</color>
+    <color name="divide_line3">#eff0f1</color>
+    <color name="divide_line4">#f8f9fa</color>
+    <color name="search_text_color">#4074e6</color>
+    <color name="search_friend_hint_color">#3b4549</color>
+    <color name="friend_hint_color">#bac5cc</color>
+    <color name="item_title">#3b4549</color>
+    <color name="item_content">#bac5cc</color>
+    <color name="search_friend_text_color">#4074e6</color>
+    <color name="send_btn_bg">#4074e6</color>
+    <color name="send_btn_enable_bg">#2d6df3</color>
+    <!-- page背景颜色 -->
+    <color name="pageColor">#f7f7f7</color>
+    <color name="chat_bg_Color">#f0f0f0</color>
+    <color name="chat_primary_menu_divide_color">#D3D5E6</color>
+    <!-- 搜索框整体背景颜色 -->
+    <color name="searchBackColor">#f0f0f0</color>
+    <!-- tabbar颜色 -->
+    <color name="tabColor">#19ffffff</color>
+    <color name="tabBorderColor">#d3d5e0</color>
+
+    <!--IndexableStickyListView-->
+    <color name="text_orglist_header">#959a9c</color>
+    <color name="header_orglist_bg">#f7f7f7</color>
+    <color name="item_orglist_bg">#ffffff</color>
+    <color name="text_orglist_item">#3b4549</color>
+    <color name="indexBar_textColor">#1939dd</color>
+    <color name="indexBar_selected_textColor">#303f9f</color>
+
+    <!-- 对比颜色 -->
+    <color name="red500">#e51c23</color>
+    <color name="pink500">#e91e63</color>
+    <color name="indigo500">#3f51b5</color>
+    <color name="purple500">#972cb0</color>
+    <color name="deepPurple500">#673ab7</color>
+    <color name="blank">#ff000000</color>
+    <!-- text颜色 -->
+    <color name="textColorPrimary">#3b4549</color>
+    <color name="textColorSecondary">#3f51b5</color>
+    <color name="textColorWhite">#ffffff</color>
+
+    <!-- border颜色 -->
+    <color name="borderColorPrimary">#d3d5e0</color>
+    <!-- normal EditText颜色 -->
+    <color name="backgroundEditText">#ffffff</color>
+    <color name="normalBorderColorEditText">#afc1d8</color>
+    <color name="focusBorderColorEditText">#4b76de</color>
+    <color name="textColorEditText">#000000</color>
+    <color name="hintColorEditText">#c6d1d9</color>
+    <color name="cursorColorEditText">#4b76de</color>
+    <!-- 自定义toolbar颜色 -->
+    <color name="backColorOfToolBar">#4b76de</color>
+    <color name="accentColor">#91a7ff</color>
+    <color name="titleColorOfToolBar">#ffffff</color>
+    <!-- 自定义toast颜色 -->
+    <color name="backColorOfToast">#3A3A3A</color>
+    <!-- 自定义popwindow颜色 -->
+    <color name="bgColorOfPopWindow">#ffffff</color>
+    <!--筛选器Tab选中的颜色-->
+    <color name="drop_down_selected_app">#4FC1E9</color>
+    <!--筛选器单个内容选中的颜色-->
+    <color name="checked">#AD92EB</color>
+    <!--筛选器单个内容未选中的颜色-->
+    <color name="unchecked">#E1E3E6</color>
+    <!--过滤器取消的颜色-->
+    <color name="cancle">#E1E3E6</color>
+    <!--业务方向收的颜色-->
+    <color name="in">#A1D469</color>
+    <!-- MineFragment -->
+    <color name="itemCommonBgColor">#ffffff</color>
+    <color name="itemCheckedBgColor">#cccccc</color>
+    <color name="itemBorderColor">#ffffff</color>
+    <color name="itemTextColor">#3b4549</color>
+    <color name="orgNameTextColor">#8a9499</color>
+    <!-- UserInfoActivity -->
+    <color name="userInfoKeyColor">#3b4549</color>
+    <color name="userInfoValueColor">#8a9499</color>
+
+    <color name="update_edit_text_color">#4074e6</color>
+    <color name="only_friend_text_color">#4074e6</color>
+
+
+    <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="gray_normal">#666667</color>
+
+    <color name="darker_gray">#aaaaaa</color>
+    <color name="white">#ffffffff</color>
+    <color name="emojicon_tab_selected">#D9D9D9</color>
+    <color name="emojicon_tab_nomal">#ffffff</color>
+
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_red_light">#ffff4444</color>
+
+    <string-array name="textDrawable">
+        <item name="red">#c51c23</item>
+        <item name="pink">#e91e63</item>
+        <item name="purple">#9c27b0</item>
+        <item name="deep_purple">#673ab7</item>
+        <item name="indigo">#3f51b5</item>
+        <item name="blue">#5677fc</item>
+        <item name="light_blue">#03a9f4</item>
+        <item name="cyan">#00bcd4</item>
+        <item name="teal">#009688</item>
+        <item name="orange">#ff9800</item>
+        <item name="blue_gray">#607d8b</item>
+        <item name="gray">#9e9e9e</item>
+        <item name="lime">#cddc39</item>
+    </string-array>
 </resources>
