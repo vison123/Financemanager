@@ -6,7 +6,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.DisplayMetrics;
-import android.util.Log;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
@@ -20,8 +19,8 @@ import java.util.Locale;
 
 public class BaseApplication  extends Application {
     private static Context context;
-    private SqLiteHelper sqLiteHelper;
-    private SQLiteDatabase db;
+    private static SqLiteHelper sqLiteHelper;
+    private static SQLiteDatabase sqLiteDatabase;
 
     @Override
     public void onCreate() {
@@ -30,16 +29,24 @@ public class BaseApplication  extends Application {
         // Initialize Logger
         Logger.addLogAdapter(new AndroidLogAdapter());
         context = getApplicationContext();
-        SqLiteHelper dh = new SqLiteHelper(context);
+        sqLiteHelper = new SqLiteHelper(context);
         //连接数据库 获取数据库实例
         //getWritableDatabase() 数据写满会报错
         //getReadableDatabase() 数据写满不会报错
-        SQLiteDatabase sd = dh.getWritableDatabase();
-        sd.close();
+        sqLiteDatabase = sqLiteHelper.getWritableDatabase();
+        sqLiteDatabase.close();
     }
 
     public static Context getContext() {
         return context;
+    }
+
+    public static SQLiteDatabase getDataBase() {
+        return sqLiteDatabase;
+    }
+
+    public static SqLiteHelper getSqLiteHelper() {
+        return sqLiteHelper;
     }
 
     public void setLanguage() {

@@ -17,6 +17,9 @@ public class Money {
     private BigDecimal amount;
     private String description;
 
+    public Money() {
+    }
+
     public Money(Long money_id, Long category_id, Long project_id, String name, String in_out_type, Date occur_date, BigDecimal amount, String description) {
         this.money_id = money_id;
         this.category_id = category_id;

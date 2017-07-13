@@ -13,13 +13,13 @@ public class DbCategory {
     /**
      * Table columns
      */
-    private static final String KEY_CATEGORY_ID = "category_id";
-    private static final String KEY_PROJECT_ID = "project_id";
-    private static final String KEY_NAME = "name";
-    private static final String KEY_CATEGORY_BUDGET = "category_budget";
-    private static final String KEY_IN_AMOUNT = "in_amount";
-    private static final String KEY_OUT_AMOUNT = "out_amount";
-    private static final String KEY_DESCRIPTION = "description";
+    public static final String KEY_CATEGORY_ID = "category_id";
+    public static final String KEY_PROJECT_ID = "project_id";
+    public static final String KEY_NAME = "name";
+    public static final String KEY_CATEGORY_BUDGET = "category_budget";
+    public static final String KEY_IN_AMOUNT = "in_amount";
+    public static final String KEY_OUT_AMOUNT = "out_amount";
+    public static final String KEY_DESCRIPTION = "description";
 
     /**
      * Database creation sql statement
@@ -33,5 +33,10 @@ public class DbCategory {
                     + KEY_IN_AMOUNT + "  DECIMAL(20,6), "
                     + KEY_OUT_AMOUNT + "  DECIMAL(20,6), "
                     + KEY_DESCRIPTION + " VARCHAR(255) " + ");";
+
+
+    public static String getTableName() {
+        return DATABASE_TABLE_CATEGORY;
+    }
 
 }

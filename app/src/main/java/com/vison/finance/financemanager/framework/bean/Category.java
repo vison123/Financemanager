@@ -15,6 +15,9 @@ public class Category {
     private BigDecimal out_amount;
     private String description;
 
+    public Category() {
+    }
+
     public Category(Long category_id, Long project_id, String name, BigDecimal category_budget, BigDecimal in_amount, BigDecimal out_amount, String description) {
         this.category_id = category_id;
         this.project_id = project_id;

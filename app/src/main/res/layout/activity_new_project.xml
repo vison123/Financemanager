@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vison.finance.financemanager.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_new_project"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:minHeight="@dimen/activity_toolbar_height">
+    </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/et_project_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_new_project"
+        android:layout_margin="5dp"
+        android:height="40dp"
+        android:text="111"
+        android:hint="项目名称"
+        android:textColor="@color/textColorPrimary"
+        android:textColorHint="@color/hintColorEditText"
+        android:background="@drawable/selector_edittext_border"/>
+
+
+</RelativeLayout>

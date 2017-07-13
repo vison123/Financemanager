@@ -61,7 +61,4 @@ public class SqLiteHelper extends SQLiteOpenHelper {
         cv.put("comment", "项目内容");
         Long l = db.insert("t_project", null, cv);
     }
-
-
-
 }

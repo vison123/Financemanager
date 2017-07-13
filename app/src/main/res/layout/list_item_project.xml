@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_project_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="项目名称"
+        android:textSize="20sp"
+        android:textColor="@color/textColorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/tv_project_budget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="项目预算"
+        android:textSize="20sp"
+        android:textColor="@color/textColorPrimary"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"
+        android:layout_alignBaseline="@+id/tv_project_name"
+        android:layout_alignBottom="@+id/tv_project_name"
+        android:layout_toRightOf="@+id/tv_project_name"
+        android:layout_toEndOf="@+id/tv_project_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(预算)"
+        android:textSize="12sp"
+        android:textColor="@color/textColorPrimary"
+        android:id="@+id/textView6"
+        android:layout_alignBaseline="@+id/tv_project_budget"
+        android:layout_alignBottom="@+id/tv_project_budget"
+        android:layout_toRightOf="@+id/tv_project_budget"
+        android:layout_toEndOf="@+id/tv_project_budget"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp" />
+
+    <TextView
+        android:id="@+id/tv_project_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="项目收入"
+        android:textColor="@color/textColorPrimary"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/tv_project_name"
+        android:layout_alignLeft="@+id/tv_project_name"
+        android:layout_alignStart="@+id/tv_project_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="收入"
+        android:textSize="12sp"
+        android:textColor="@color/textColorPrimary"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/tv_project_income"
+        android:layout_alignLeft="@+id/tv_project_income"
+        android:layout_alignStart="@+id/tv_project_income" />
+
+    <TextView
+        android:id="@+id/tv_project_outcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="项目支出"
+        android:textColor="@color/textColorPrimary"
+        android:layout_alignBaseline="@+id/tv_project_income"
+        android:layout_alignBottom="@+id/tv_project_income"
+        android:layout_alignLeft="@+id/tv_project_budget"
+        android:layout_alignStart="@+id/tv_project_budget" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="支出"
+        android:textSize="12sp"
+        android:textColor="@color/textColorPrimary"
+        android:layout_below="@+id/tv_project_outcome"
+        android:layout_alignLeft="@+id/tv_project_outcome"
+        android:layout_alignStart="@+id/tv_project_outcome" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/divide_line"
+        android:id="@+id/relativeLayout2" />
+
+</RelativeLayout>

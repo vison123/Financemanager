@@ -28,11 +28,12 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         ActivityManager.getAppManager().addActivity(this);
         setContentView();
+        ButterKnife.bind(this);
+        initParams();
         initView();
         initData();
-        initParams();
         initListeners();
-        ButterKnife.bind(this);
+
     }
 
     @Override

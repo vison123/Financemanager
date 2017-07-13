@@ -18,6 +18,9 @@ public class Project {
     private BigDecimal out_amount;
     private BigDecimal in_amount;
 
+    public Project() {
+    }
+
     public Project(Long project_id, String project_name, Date start_date, Date end_date, String description, String comment, BigDecimal budget, BigDecimal out_amount, BigDecimal in_amount) {
         this.project_id = project_id;
         this.project_name = project_name;

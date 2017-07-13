@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,13 +7,32 @@
     android:layout_height="match_parent"
     tools:context="com.vison.finance.financemanager.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_main"
         android:layout_height="wrap_content"
-        android:text="FinanceManager!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:minHeight="@dimen/activity_toolbar_height">
+    </android.support.v7.widget.Toolbar>
 
-</android.support.constraint.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/fl_fragments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tab_border"
+        android:layout_below="@+id/toolbar_main" />
+
+    <View
+        android:id="@+id/tab_border"
+        android:layout_above="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/tabBorderColor" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</RelativeLayout>
