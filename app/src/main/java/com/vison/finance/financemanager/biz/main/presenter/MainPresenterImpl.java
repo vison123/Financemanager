@@ -23,10 +23,10 @@ public class MainPresenterImpl implements MainContract.MainPresenter{
                 mainView.switch2Project();
                 break;
             case 1:
-                mainView.switch2Publish();
+                mainView.switch2Money();
                 break;
             case 2:
-                mainView.switch2Money();
+                mainView.switch2Statistics();
                 break;
         }
     }

@@ -18,7 +18,7 @@ import com.vison.finance.financemanager.biz.main.contact.MainContract;
 import com.vison.finance.financemanager.biz.main.presenter.MainPresenterImpl;
 import com.vison.finance.financemanager.biz.money.view.MoneyFragment;
 import com.vison.finance.financemanager.biz.project.view.ProjectFragment;
-import com.vison.finance.financemanager.biz.publish.view.PublishFragment;
+import com.vison.finance.financemanager.biz.statistics.view.StatisticsFragment;
 import com.vison.finance.financemanager.framework.base.ActivityManager;
 import com.vison.finance.financemanager.framework.base.BaseActivity;
 import com.vison.finance.financemanager.framework.db.SqLiteHelper;
@@ -37,12 +37,12 @@ public class MainActivity extends BaseActivity implements MainContract.MainView{
     private ImageView tabIcon;
     private TextView tabDesc;
     private int[] tabIconsRes = {R.drawable.selector_rb_project,
-            R.drawable.selector_rb_publish, R.drawable.selector_rb_money};
-    private int[] tabDescText = {R.string.title_project,
-            R.string.title_publish, R.string.title_money};
+             R.drawable.selector_rb_money, R.drawable.selector_rb_statistics};
+    private int[] tabDescText = {R.string.title_project, R.string.title_money,
+            R.string.title_statistics};
     private ProjectFragment projectFragment =new ProjectFragment();
     private MoneyFragment moneyfragment =new MoneyFragment();
-    private PublishFragment publishfragment = new PublishFragment();
+    private StatisticsFragment statisticsFragment = new StatisticsFragment();
     private Fragment currFragment = projectFragment;
     public MainContract.MainPresenter mainPresenter;
 
@@ -86,10 +86,10 @@ public class MainActivity extends BaseActivity implements MainContract.MainView{
     }
 
     @Override
-    public void switch2Publish() {
-        changeFragment(publishfragment);
-        toolbar.setTitle(R.string.title_publish);
-        currFragment = publishfragment;
+    public void switch2Statistics() {
+        changeFragment(statisticsFragment);
+        toolbar.setTitle(R.string.title_statistics);
+        currFragment = statisticsFragment;
     }
 
     @Override
@@ -120,23 +120,19 @@ public class MainActivity extends BaseActivity implements MainContract.MainView{
     }
 
     private void initToolBar() {
-        toolbar.setTitle("财务管理");
+        toolbar.setTitle("项目");
         setSupportActionBar(toolbar);
     }
 
     private void initTabLayout() {
         tabLayout.setSelectedTabIndicatorColor(Color.WHITE);
         for (int i = 0; i < 3; i++) {
-            if (i == 1) {
-                tabLayout.addTab(tabLayout.newTab().setCustomView(R.layout.tab_item_publish));
-            } else {
-                tabLayout.addTab(tabLayout.newTab().setCustomView(R.layout.tab_item_view));
-                View customView = tabLayout.getTabAt(i).getCustomView();
-                tabIcon = (ImageView) customView.findViewById(R.id.tabIcon);
-                tabDesc = (TextView) customView.findViewById(R.id.tabDesc);
-                tabIcon.setImageResource(tabIconsRes[i]);
-                tabDesc.setText(tabDescText[i]);
-            }
+            tabLayout.addTab(tabLayout.newTab().setCustomView(R.layout.tab_item_view));
+            View customView = tabLayout.getTabAt(i).getCustomView();
+            tabIcon = (ImageView) customView.findViewById(R.id.tabIcon);
+            tabDesc = (TextView) customView.findViewById(R.id.tabDesc);
+            tabIcon.setImageResource(tabIconsRes[i]);
+            tabDesc.setText(tabDescText[i]);
         }
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

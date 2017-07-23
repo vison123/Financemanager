@@ -11,6 +11,7 @@ import com.vison.finance.financemanager.R;
 import com.vison.finance.financemanager.framework.bean.Project;
 
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Administrator on 2017/7/12.
@@ -60,9 +61,9 @@ public class RecyclerViewLinearAdapter extends RecyclerView.Adapter<RecyclerView
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ((MyViewHolder)holder).tvProjectName.setText(projects.get(position).getProject_name());
-        ((MyViewHolder)holder).tvProjectBudget.setText(projects.get(position).getBudget().toString());
-        ((MyViewHolder)holder).tvProjectIncome.setText(projects.get(position).getIn_amount().toString());
-        ((MyViewHolder)holder).tvProjectOutCome.setText(projects.get(position).getOut_amount().toString());
+        ((MyViewHolder)holder).tvProjectBudget.setText(String.format(Locale.CHINA,"%,.2f", projects.get(position).getBudget()));
+        ((MyViewHolder)holder).tvProjectIncome.setText(String.format(Locale.CHINA,"%,.2f", projects.get(position).getIn_amount()));
+        ((MyViewHolder)holder).tvProjectOutCome.setText(String.format(Locale.CHINA,"%,.2f", projects.get(position).getOut_amount()));
     }
 
     @Override

@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.vison.finance.financemanager.MainActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="publish"
-        android:textColor="#f00"/>
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_coming_soon"/>
 
 </RelativeLayout>

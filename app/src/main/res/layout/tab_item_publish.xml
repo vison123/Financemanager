@@ -8,7 +8,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp">
         <ImageView
-            android:src="@drawable/selector_rb_publish"
+            android:src="@drawable/selector_rb_statistics"
             android:id="@+id/tabIcon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

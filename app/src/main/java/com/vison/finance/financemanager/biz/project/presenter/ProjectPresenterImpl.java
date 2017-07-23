@@ -15,15 +15,6 @@ import java.util.List;
 public class ProjectPresenterImpl implements ProjectContract.ProjectPresenter {
     @Override
     public List<Project> getProjectList() {
-        List<Project> projectList = new ArrayList<>();
-        for (int i = 1; i< 10; i++){
-            Project project = new Project();
-            project.setProject_name("项目" + i);
-            project.setBudget(BigDecimal.valueOf(1000 * i));
-            project.setIn_amount(BigDecimal.valueOf(100 * i));
-            project.setOut_amount(BigDecimal.valueOf(100 * i));
-            projectList.add(project);
-        }
-        return projectList;
+        return DbProject.findAllProject();
     }
 }

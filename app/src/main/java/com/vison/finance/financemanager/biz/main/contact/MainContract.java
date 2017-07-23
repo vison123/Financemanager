@@ -9,7 +9,7 @@ public class MainContract {
 
         void switch2Project();
 
-        void switch2Publish();
+        void switch2Statistics();
 
         void switch2Money();
     }

@@ -1,5 +1,9 @@
 package com.vison.finance.financemanager.biz.money.contact;
 
+import com.vison.finance.financemanager.framework.bean.Money;
+
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/7/11.
  */
@@ -7,21 +11,13 @@ package com.vison.finance.financemanager.biz.money.contact;
 public class MoneyContract {
     public interface MoneyView {
 
-        void switch2Project();
-
-        void switch2Publish();
-
-        void switch2Money();
     }
 
     public interface MoneyPresenter {
-        void switchNavigation(int id);
-
-        void getProjectList();
+        List<Money> findAllMoneyList();
     }
 
     public interface MoneyModel {
-
-        void getProjectList();
+        void findAllMoneyList();
     }
 }

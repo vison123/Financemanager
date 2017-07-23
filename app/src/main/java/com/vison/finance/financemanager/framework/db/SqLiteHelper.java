@@ -34,7 +34,6 @@ public class SqLiteHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {
         createTable(db);
-        initData(db);
     }
 
     //升级数据库
@@ -49,16 +48,4 @@ public class SqLiteHelper extends SQLiteOpenHelper {
         db.execSQL(DbMoney.CREATE_MONEY_TABLE);
     }
 
-    private void initData (SQLiteDatabase db) {
-        ContentValues cv = new ContentValues();
-        cv.put("project_name", "项目一");
-        cv.put("start_date", "2017-07-01 11:21:10.64");
-        cv.put("end_date", "2018-07-01 11:21:10.64");
-        cv.put("budget", 3000000);
-        cv.put("in_amount", 20000);
-        cv.put("out_amount", 3000);
-        cv.put("description", "项目描述");
-        cv.put("comment", "项目内容");
-        Long l = db.insert("t_project", null, cv);
-    }
 }

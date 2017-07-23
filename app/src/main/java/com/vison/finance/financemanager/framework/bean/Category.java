@@ -30,15 +30,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category{" +
-                "category_id=" + category_id +
-                ", project_id=" + project_id +
-                ", name='" + name + '\'' +
-                ", category_budget=" + category_budget +
-                ", in_amount=" + in_amount +
-                ", out_amount=" + out_amount +
-                ", description='" + description + '\'' +
-                '}';
+        return name;
     }
 
     public Long getCategory_id() {

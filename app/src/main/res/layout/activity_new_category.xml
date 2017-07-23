@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vison.finance.financemanager.biz.category.view.NewCategoryActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_new_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="@dimen/activity_toolbar_height"></android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_new_category"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/tv_key_category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="类别名称"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/et_category_name"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_key_category_name"
+                android:background="@drawable/selector_edittext_border"
+                android:hint="类别名称"
+                android:paddingLeft="5dp"
+                android:textColor="@color/textColorPrimary"
+                android:textColorHint="@color/hintColorEditText" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/tv_key_category_budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="类别预算"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/et_category_budget"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_key_category_budget"
+                android:background="@drawable/selector_edittext_border"
+                android:hint="类别预算"
+                android:inputType="numberDecimal"
+                android:paddingLeft="5dp"
+                android:textColor="@color/textColorPrimary"
+                android:textColorHint="@color/hintColorEditText" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <TextView
+                android:id="@+id/tv_key_category_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="类别备注"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/et_category_description"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_key_category_description"
+                android:background="@drawable/selector_edittext_border"
+                android:gravity="top"
+                android:hint="备注"
+                android:paddingLeft="5dp"
+                android:textColor="@color/textColorPrimary"
+                android:textColorHint="@color/hintColorEditText" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_category_save"
+            style="@style/common_button"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="保存" />
+    </LinearLayout>
+</RelativeLayout>

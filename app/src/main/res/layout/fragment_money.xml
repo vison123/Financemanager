@@ -7,10 +7,25 @@
     android:layout_height="match_parent"
     tools:context="com.vison.finance.financemanager.MainActivity">
 
-    <TextView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/money_swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_money"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_new_money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="money"
-        android:textColor="#f00"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_float_button_add" />
 
 </RelativeLayout>

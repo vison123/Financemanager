@@ -49,10 +49,11 @@ public class DbManager {
      * @param nullColumnHack 非空字段名
      * @param values         数据源
      */
-    public void mInsert(String tableName, String nullColumnHack, ContentValues values) {
+    public Long mInsert(String tableName, String nullColumnHack, ContentValues values) {
         mSQLiteDatabase = mSQLiteOpenHelper.getWritableDatabase();
-        mSQLiteDatabase.insert(tableName, nullColumnHack, values);
+        long id = mSQLiteDatabase.insert(tableName, nullColumnHack, values);
         closeAll();
+        return id;
     }
 
     /**
@@ -96,7 +97,7 @@ public class DbManager {
     }
 
     /**
-     * 查询
+     * 单表查询
      *
      * @param tableName
      * @param columns
@@ -239,4 +240,5 @@ public class DbManager {
             Logger.e(TAG, "closeAll: mSQLiteDatabase已关闭");
         }
     }
+
 }

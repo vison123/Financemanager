@@ -10,7 +10,9 @@ import java.util.Date;
 public class Money {
     private Long money_id;
     private Long category_id;
+    private String category_name;
     private Long project_id;
+    private String project_name;
     private String name;
     private String in_out_type;
     private Date occur_date;
@@ -36,7 +38,9 @@ public class Money {
         return "Money{" +
                 "money_id=" + money_id +
                 ", category_id=" + category_id +
+                ", category_name='" + category_name + '\'' +
                 ", project_id=" + project_id +
+                ", project_name='" + project_name + '\'' +
                 ", name='" + name + '\'' +
                 ", in_out_type='" + in_out_type + '\'' +
                 ", occur_date=" + occur_date +
@@ -107,5 +111,21 @@ public class Money {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCategory_name() {
+        return category_name;
+    }
+
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
+    }
+
+    public String getProject_name() {
+        return project_name;
+    }
+
+    public void setProject_name(String project_name) {
+        this.project_name = project_name;
     }
 }

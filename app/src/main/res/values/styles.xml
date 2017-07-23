@@ -1,19 +1,18 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="AppTheme.Base">
-        <!--status bar color-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <!--window color-->
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:textColorPrimary">@color/textColorWhite</item>
     </style>
-
-    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
-
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
-
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- TextInputLayout的样式-->
@@ -21,6 +20,14 @@
         <!-- Hint color and label color in FALSE state -->
         <item name="android:textColorHint">@color/primaryColor</item>
         <!--<item name="android:textColor">@color/v4_text_color_black_87</item>-->
+    </style>
+
+    <style name="common_button" parent="android:style/Theme.Dialog">
+        <item name="android:layout_height">47dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textColorWhite</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@drawable/selector_common_button</item>
     </style>
 
 </resources>

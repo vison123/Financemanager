@@ -1,5 +1,6 @@
 package com.vison.finance.financemanager.framework.bean;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -7,7 +8,7 @@ import java.util.Date;
  * Created by Administrator on 2017/7/6.
  */
 
-public class Project {
+public class Project implements Serializable{
     private Long project_id;
     private String project_name;
     private Date start_date;
@@ -35,17 +36,7 @@ public class Project {
 
     @Override
     public String toString() {
-        return "Project{" +
-                "project_id=" + project_id +
-                ", project_name='" + project_name + '\'' +
-                ", start_date=" + start_date +
-                ", end_date=" + end_date +
-                ", description='" + description + '\'' +
-                ", comment='" + comment + '\'' +
-                ", budget=" + budget +
-                ", out_amount=" + out_amount +
-                ", in_amount=" + in_amount +
-                '}';
+        return project_name;
     }
 
     public Long getProject_id() {

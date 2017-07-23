@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/tv_project_name"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="项目名称"
         android:textSize="20sp"
@@ -28,8 +28,8 @@
         android:text="项目预算"
         android:textSize="20sp"
         android:textColor="@color/textColorPrimary"
-        android:layout_marginLeft="55dp"
-        android:layout_marginStart="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_alignBaseline="@+id/tv_project_name"
         android:layout_alignBottom="@+id/tv_project_name"
         android:layout_toRightOf="@+id/tv_project_name"
@@ -46,12 +46,11 @@
         android:layout_alignBottom="@+id/tv_project_budget"
         android:layout_toRightOf="@+id/tv_project_budget"
         android:layout_toEndOf="@+id/tv_project_budget"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp" />
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/tv_project_income"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="项目收入"
         android:textColor="@color/textColorPrimary"
@@ -73,7 +72,7 @@
 
     <TextView
         android:id="@+id/tv_project_outcome"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="项目支出"
         android:textColor="@color/textColorPrimary"

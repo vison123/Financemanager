@@ -1,4 +1,4 @@
-package com.vison.finance.financemanager.biz.publish.view;
+package com.vison.finance.financemanager.biz.statistics.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2017/7/11.
  */
 
-public class PublishFragment extends BaseFragment{
+public class StatisticsFragment extends BaseFragment{
     @Override
     public void initListeners() {
 
@@ -20,7 +20,7 @@ public class PublishFragment extends BaseFragment{
 
     @Override
     public View initView(LayoutInflater inflater) {
-        View view = inflater.inflate(R.layout.fragment_publish, null, false);
+        View view = inflater.inflate(R.layout.fragment_statistics, null, false);
         ButterKnife.bind(this, view);
         return view;
     }
