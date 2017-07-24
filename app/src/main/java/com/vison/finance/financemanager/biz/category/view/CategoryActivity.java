@@ -81,8 +81,16 @@ public class CategoryActivity extends BaseActivity {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mCategoryList = mPresenter.getCategoryListByProjectId(mProject.getProject_id());
-                mAdapter = new CategoryListAdapter(CategoryActivity.this, mCategoryList);
+                Category newCategory = new Category();
+                newCategory.setCategoryId(100L);
+                newCategory.setProjectId(100L);
+                newCategory.setCategoryName("CategoryName100");
+                newCategory.setCategoryBudget(BigDecimal.valueOf(1000));
+                newCategory.setInAmount(BigDecimal.ZERO);
+                newCategory.setOutAmount(BigDecimal.ZERO);
+                mCategoryList.add(0, newCategory);
+//                 mCategoryList = mPresenter.getCategoryListByProjectId(mProject.getProject_id());
+//                 mAdapter = new CategoryListAdapter(CategoryActivity.this, mCategoryList);
                 mAdapter.notifyDataSetChanged();
                 Toast.makeText(CategoryActivity.this, "刷新成功", Toast.LENGTH_SHORT).show();
                 // 加载完数据设置为不刷新状态，将下拉进度收起来
