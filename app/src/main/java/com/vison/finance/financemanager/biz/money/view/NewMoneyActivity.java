@@ -124,14 +124,12 @@ public class NewMoneyActivity extends BaseActivity
         moneyTypeSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
-                Snackbar.make(view, "Clicked " + item.toString(), Snackbar.LENGTH_LONG).show();
                 moneyInOutType = item;
             }
         });
         projectNameSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<Project>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int position, long id, Project item) {
-                Snackbar.make(view, "Clicked " + item.toString(), Snackbar.LENGTH_LONG).show();
                 selectProjectId = item.getProject_id();
                 selectProjectName = item.getProject_name();
                 categoryList = categoryPresenter.getCategoryListByProjectId(item.getProject_id());
@@ -149,7 +147,6 @@ public class NewMoneyActivity extends BaseActivity
         categoryNameSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<Category>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int position, long id, Category item) {
-                Snackbar.make(view, "Clicked " + item.toString(), Snackbar.LENGTH_LONG).show();
                 categoryList = categoryPresenter.getCategoryListByProjectId(selectProjectId);
                 categoryNameSpinner.setItems(categoryList);
                 selectCategoryId = item.getCategory_id();
