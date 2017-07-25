@@ -2,6 +2,7 @@ package com.vison.finance.financemanager.biz.project.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -43,6 +44,15 @@ public class ProjectFragment extends BaseFragment implements ProjectContract.Pro
     List<Project> mProjectList;
 
     @Override
+    public void onResume() {
+        super.onResume();
+        List<Project> newProjectList = mProjectPresenter.getProjectList();
+        mProjectList.clear();
+        mProjectList.addAll(newProjectList);
+        mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
     public View initView(LayoutInflater inflater) {
         View view = inflater.inflate(R.layout.fragment_project, null, false);
         ButterKnife.bind(this, view);
@@ -57,7 +67,6 @@ public class ProjectFragment extends BaseFragment implements ProjectContract.Pro
     @Override
     public void initData() {
         initRecycleView();
-        mProjectList = mProjectPresenter.getProjectList();
     }
 
 

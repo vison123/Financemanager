@@ -50,6 +50,21 @@ public class MoneyFragment extends BaseFragment {
     List<Money> moneyList;
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        List<Money> newMoneyList = mMoneyPresenter.findAllMoneyList();
+        moneyList.clear();
+        moneyList.addAll(newMoneyList);
+        mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
     public void initListeners() {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -95,7 +110,6 @@ public class MoneyFragment extends BaseFragment {
     @Override
     public void initData() {
         initRecycleView();
-        moneyList = mMoneyPresenter.findAllMoneyList();
     }
 
     @Override
