@@ -147,8 +147,6 @@ public class NewMoneyActivity extends BaseActivity
         categoryNameSpinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<Category>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int position, long id, Category item) {
-                categoryList = categoryPresenter.getCategoryListByProjectId(selectProjectId);
-                categoryNameSpinner.setItems(categoryList);
                 selectCategoryId = item.getCategory_id();
             }
         });

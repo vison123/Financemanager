@@ -36,7 +36,6 @@ public abstract class BaseFragment extends Fragment {
         mActivity = (FragmentActivity) getActivity();
         View view = initView(inflater);
         initPresent();
-        initFindViewById(view);
         initData();
         initListeners();
         return view;
@@ -53,11 +52,6 @@ public abstract class BaseFragment extends Fragment {
      * @return
      */
     public abstract View initView(LayoutInflater inflater);
-
-    /**
-     * 初始化控件
-     */
-    protected abstract void initFindViewById(View view);
 
     /**
      * 子类在此方法中实现数据的初始化

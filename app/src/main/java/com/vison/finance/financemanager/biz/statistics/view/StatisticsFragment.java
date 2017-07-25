@@ -26,11 +26,6 @@ public class StatisticsFragment extends BaseFragment{
     }
 
     @Override
-    protected void initFindViewById(View view) {
-
-    }
-
-    @Override
     public void initData() {
 
     }

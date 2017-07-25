@@ -50,8 +50,8 @@ public class ProjectFragment extends BaseFragment implements ProjectContract.Pro
     }
 
     @Override
-    protected void initFindViewById(View view) {
-
+    public void initPresent() {
+        mProjectPresenter = new ProjectPresenterImpl();
     }
 
     @Override
@@ -60,10 +60,6 @@ public class ProjectFragment extends BaseFragment implements ProjectContract.Pro
         mProjectList = mProjectPresenter.getProjectList();
     }
 
-    @Override
-    public void initPresent() {
-        mProjectPresenter = new ProjectPresenterImpl();
-    }
 
     @Override
     public void initListeners() {
@@ -71,9 +67,9 @@ public class ProjectFragment extends BaseFragment implements ProjectContract.Pro
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mProjectList = mProjectPresenter.getProjectList();
-                Logger.d(mProjectList);
-                mAdapter = new RecyclerViewLinearAdapter(getContext(), mProjectList);
+                List<Project> newProjectList = mProjectPresenter.getProjectList();
+                mProjectList.clear();
+                mProjectList.addAll(newProjectList);
                 mAdapter.notifyDataSetChanged();
                 Toast.makeText(getContext(), "刷新成功", Toast.LENGTH_SHORT).show();
                 // 加载完数据设置为不刷新状态，将下拉进度收起来

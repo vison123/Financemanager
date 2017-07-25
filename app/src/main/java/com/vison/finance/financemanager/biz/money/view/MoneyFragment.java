@@ -1,6 +1,8 @@
 package com.vison.finance.financemanager.biz.money.view;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -10,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
@@ -51,8 +54,9 @@ public class MoneyFragment extends BaseFragment {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                moneyList = mMoneyPresenter.findAllMoneyList();
-                mAdapter = new MoneyListAdapter(getContext(), moneyList);
+                List<Money> newMoneyList = mMoneyPresenter.findAllMoneyList();
+                moneyList.clear();
+                moneyList.addAll(newMoneyList);
                 mAdapter.notifyDataSetChanged();
                 Toast.makeText(getActivity(), "刷新成功", Toast.LENGTH_SHORT).show();
                 // 加载完数据设置为不刷新状态，将下拉进度收起来
@@ -89,11 +93,6 @@ public class MoneyFragment extends BaseFragment {
     }
 
     @Override
-    protected void initFindViewById(View view) {
-
-    }
-
-    @Override
     public void initData() {
         initRecycleView();
         moneyList = mMoneyPresenter.findAllMoneyList();
@@ -115,7 +114,6 @@ public class MoneyFragment extends BaseFragment {
         if (mAdapter == null) {
             mAdapter = new MoneyListAdapter(getContext(), moneyList);
         }
-        Logger.d(mRecyclerView);
         mRecyclerView.setAdapter(mAdapter);
         //设置Item增加、移除动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
