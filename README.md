@@ -27,3 +27,8 @@ SELECT * from Category WHERE project_id = 1;
 SELECT * from Money WHERE money_category_id = 1;
 //查询项目下所有账单
 SELECT * from Money WHERE project_id = 1;
+
+
+＃项目，类别，流水的删除，查看详情；
+＃流水列表的日期显示；
+＃必要图标配置；
